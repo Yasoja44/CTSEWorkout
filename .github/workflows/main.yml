@@ -43,9 +43,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: client
-          # syntax=client/Dockerfile
-          file: Dockerfile
+          context: .
+          file: ./client/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ctse-workout-client:latest
           
@@ -59,9 +58,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: client
-          # syntax=client/Dockerfile
-          file: Dockerfile
+          context: .
+          file: ./client/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ctse-workout-client:latest
