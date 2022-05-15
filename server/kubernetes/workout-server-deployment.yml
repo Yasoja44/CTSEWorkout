@@ -44,7 +44,7 @@ metadata:
               'f:terminationGracePeriodSeconds': {}
       manager: GoogleCloudConsole
       operation: Update
-      time: '2022-05-15T13:33:32Z'
+      time: '2022-05-15T16:29:58Z'
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -78,7 +78,7 @@ metadata:
           'f:updatedReplicas': {}
       manager: kube-controller-manager
       operation: Update
-      time: '2022-05-15T13:33:35Z'
+      time: '2022-05-15T16:30:00Z'
   name: ctse-workout-server
   namespace: default
 spec:
@@ -124,7 +124,7 @@ metadata:
             'f:name': {}
       manager: GoogleCloudConsole
       operation: Update
-      time: '2022-05-15T13:33:33Z'
+      time: '2022-05-15T16:29:58Z'
     - apiVersion: autoscaling/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -138,8 +138,8 @@ metadata:
           'f:desiredReplicas': {}
       manager: vpa-recommender
       operation: Update
-      time: '2022-05-15T13:33:48Z'
-  name: ctse-workout-server-hpa-a6hm
+      time: '2022-05-15T16:30:13Z'
+  name: ctse-workout-server-hpa-tjiq
   namespace: default
 spec:
   maxReplicas: 5
@@ -184,13 +184,13 @@ metadata:
           'f:type': {}
       manager: GoogleCloudConsole
       operation: Update
-      time: '2022-05-15T14:13:34Z'
+      time: '2022-05-15T16:33:58Z'
   name: ctse-workout-server-service
   namespace: default
 spec:
-  clusterIP: 10.76.1.168
+  clusterIP: 10.48.13.209
   clusterIPs:
-    - 10.76.1.168
+    - 10.48.13.209
   ipFamilies:
     - IPv4
   ipFamilyPolicy: SingleStack
