@@ -37,7 +37,7 @@ class showWorkoutEmployee extends Component {
 
 
 
-            axios.get(`http://10.48.2.244:5000/workout/creator/41224d776a326fb40f000001`)
+            axios.get(`http://10.76.4.42:5000/workout/creator/41224d776a326fb40f000001`)
                 .then(response => {
                     this.setState({ Workouts: response.data.data });
                     console.log(response.data.data);
@@ -57,7 +57,7 @@ class showWorkoutEmployee extends Component {
     }
 
     deleteWorkout(id){
-        axios.delete(`http://10.48.2.244:5000/workout/${id}`)
+        axios.delete(`http://10.76.4.42:5000/workout/${id}`)
             .then(() =>{
                 SubmissionAlert();
                 window.location.reload(false);
