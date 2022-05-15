@@ -60,7 +60,7 @@ class showWorkoutChosen extends Component {
     componentDidMount() {
 
 
-        axios.get(`http://10.76.4.42:5000/workout/chosen/${this.props.match.params.id}`)
+        axios.get(`http://10.76.1.168:5000/workout/chosen/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({
                     workouts: response.data.data
@@ -88,7 +88,7 @@ class showWorkoutChosen extends Component {
                 });
             }
         }).then(()=>{
-            axios.get('http://10.76.4.42:5000/workoutUser/user/'+this.state.UserId)
+            axios.get('http://10.76.1.168:5000/workoutUser/user/'+this.state.UserId)
                 .then(response =>{
                     this.setState({
                         exists: response.data.exists,
@@ -111,7 +111,7 @@ class showWorkoutChosen extends Component {
 
 
         if(this.state.exists){
-            axios.put(`http://10.76.4.42:5000/workoutUser/${this.state.existId}`,message)
+            axios.put(`http://10.76.1.168:5000/workoutUser/${this.state.existId}`,message)
                 .then(response => {
                     let message = {
                         workoutId:this.state.id,
@@ -119,7 +119,7 @@ class showWorkoutChosen extends Component {
                         userId:this.state.UserId
                     };
 
-                    axios.patch(`http://10.76.4.42:5000/workout/addUsers`, message)
+                    axios.patch(`http://10.76.1.168:5000/workout/addUsers`, message)
                         .then(response => {
                             SubmissionAlert2();
                             window.location.reload(false);
@@ -133,7 +133,7 @@ class showWorkoutChosen extends Component {
                 window.location = `/workoutPayment/${this.state.workout_price}`
             })
         }else{
-            axios.post(`http://10.76.4.42:5000/workoutUser/`,message)
+            axios.post(`http://10.76.1.168:5000/workoutUser/`,message)
                 .then(response => {
                     let message = {
                         workoutId:this.state.id,
@@ -141,7 +141,7 @@ class showWorkoutChosen extends Component {
                         userId:this.state.UserId
                     };
 
-                    axios.patch(`http://10.76.4.42:5000/workout/addUsers`, message)
+                    axios.patch(`http://10.76.1.168:5000/workout/addUsers`, message)
                         .then(response => {
                             SubmissionAlert();
                             window.location.reload(false);

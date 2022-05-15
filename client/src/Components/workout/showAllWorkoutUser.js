@@ -25,7 +25,7 @@ class showAllWorkoutUser extends Component {
 
     componentDidMount() {
 
-        axios.get(`http://10.76.4.42:5000/workout/`)
+        axios.get(`http://10.76.1.168:5000/workout/`)
             .then(response => {
                 this.setState({ Workouts: response.data.data });
 
