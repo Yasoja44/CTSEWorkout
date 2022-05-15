@@ -44,7 +44,7 @@ class showWorkoutOneEmployee extends Component {
 
     componentDidMount() {
 
-        axios.get(`http://localhost:5000/workout/${this.props.match.params.id}`)
+        axios.get(`http://10.48.2.244:5000/workout/${this.props.match.params.id}`)
             .then(response => {
                 this.setState({
                     id: response.data.data._id,
@@ -68,7 +68,7 @@ class showWorkoutOneEmployee extends Component {
     }
 
     deleteWorkout(id){
-        axios.delete(`http://localhost:5000/workout/${id}`)
+        axios.delete(`http://10.48.2.244:5000/workout/${id}`)
             .then(() =>{
                 SubmissionAlert();
                 window.location = `/workoutEmployeeShow`

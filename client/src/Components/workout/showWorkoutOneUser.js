@@ -23,7 +23,7 @@ class showWorkoutOneUser extends Component {
     componentDidMount() {
 
         //axios.get(`http://localhost:5000/workoutUser/user/${this.props.match.params.id}`)
-        axios.get(`http://localhost:5000/workoutUser/user/${this.state.id}`)
+        axios.get(`http://10.48.2.244:5000/workoutUser/user/${this.state.id}`)
             .then(response => {
                 let d = new Date(response.data.data[0].createdAt);
                 let newDate = new Date(d.setMonth(d.getMonth()+8));
@@ -34,7 +34,7 @@ class showWorkoutOneUser extends Component {
                 })
                 console.log(response.data.data[0].workout_id);
             }).then(()=>{
-                axios.get(`http://localhost:5000/workout/${this.state.workoutId}`)
+                axios.get(`http://10.48.2.244:5000/workout/${this.state.workoutId}`)
                     .then(response =>{
                         this.setState({
                             workout_img:response.data.data.workout_img,

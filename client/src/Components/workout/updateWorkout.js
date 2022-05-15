@@ -64,7 +64,7 @@ class UpdateWorkout extends Component {
 
     componentDidMount() {
 
-        axios.get(`http://localhost:5000/workout/${this.props.match.params.id}`)
+        axios.get(`http://10.48.2.244:5000/workout/${this.props.match.params.id}`)
             .then(response => {
                 this.setState(
                     {
@@ -149,7 +149,7 @@ class UpdateWorkout extends Component {
             SubmissionFail2(message);
         } else {
             console.log('DATA TO SEND', workout)
-            axios.put(`http://localhost:5000/workout/${this.props.match.params.id}`, workout)
+            axios.put(`http://10.48.2.244:5000/workout/${this.props.match.params.id}`, workout)
                 .then(response => {
                     SubmissionAlert();
                 })
