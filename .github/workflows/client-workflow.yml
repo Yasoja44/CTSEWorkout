@@ -49,7 +49,7 @@ jobs:
           context: .
           file: ./client/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ctse-workout-client:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ctse_workout_client:latest
           
       -
         name: Login to Docker Hub
@@ -65,7 +65,7 @@ jobs:
           file: ./client/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ctse-workout-client:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/ctse-workout-client:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/ctse-workout-client:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ctse_workout_client:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/ctse_workout_client:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/ctse_workout_client:buildcache,mode=max
           
