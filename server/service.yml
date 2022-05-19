@@ -1,0 +1,15 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "ctse-workout-server-service"
+  namespace: "default"
+  labels:
+    app: "ctse-workout-server"
+spec:
+  ports:
+  - protocol: "TCP"
+    port: 5000
+  selector:
+    app: "ctse-workout-server"
+  type: "ClusterIP"

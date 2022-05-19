@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "ctse-workout-server"
+  namespace: "default"
+  labels:
+    app: "ctse-workout-server"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "ctse-workout-server"
+  template:
+    metadata:
+      labels:
+        app: "ctse-workout-server"
+    spec:
+      containers:
+      - name: "ctseworkout-1"
+        image: "gcr.io/animated-backup-349310/github.com/yasoja44/ctseworkout:$SHORT_SHA"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "ctse-workout-server-hpa-k4mm"
+  namespace: "default"
+  labels:
+    app: "ctse-workout-server"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "ctse-workout-server"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: "Resource"
+    resource:
+      name: "cpu"
+      targetAverageUtilization: 80
